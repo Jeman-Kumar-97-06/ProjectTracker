@@ -1,7 +1,6 @@
-import React from 'react';
 import { 
   BarChart2, TrendingUp, Users, Calendar, 
-  Download, Share2, ChevronDown, Activity
+  Download, ChevronDown, Activity
 } from 'lucide-react';
 
 /* --- Styles for Simple Charts --- */

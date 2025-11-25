@@ -1,50 +1,43 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 const bcrypt   = require('bcrypt');
-const validator = require('validator');
+const validator= require('validator');
 
 const userSchema = new Schema({
-    name : {type:String,required:true},
-    email : {type:String,required:true},
-    password : {type:String,required:false},
-});
+    name:{type:String,required:true},
+    email:{type:String,required:true},
+    password:{type:String,required:true},
+    role:{type:String,enum:['creator','member']}
+},{timestamps:true});
 
-userSchema.statics.signup = async function(name,email,password) {
-    //See if the email is valid
+userSchema.statics.signup = async function(name,email,password,role) {
     if (!validator.isEmail(email)){
-        throw Error("Invalid Email!")
+        throw Error("Invalid Email!");
     }
-    //See if the password is strong
     if (!validator.isStrongPassword(password)){
-        throw Error("Password not strong enough!")
+        throw Error("Password not Strong enough!")
     }
-    //See if the email already exists
+    if (role !== 'creator' || role !== 'member') {
+        throw Error("Role should be 'Creator/Member'!")
+    }
     const exists = await this.findOne({email});
     if (exists) {
-        throw Error("Email already exits");
+        throw Error("Email Already Exists!");
     }
-    //create as salt of length 10
     const salt = await bcrypt.genSalt(10);
-    //Add that salt to password to create a hash
     const hash = await bcrypt.hash(password,salt);
-    //Create new user
-    const user = await this.create({name,email,password:hash});
-    return user;
+    const user = await this.create({name,email,password:hash,role:role});
+    return user
 }
 
-userSchema.statics.login = async function(name,password) {
-    //Find the user with the given name:
-    const user = await this.findOne({name:name});
-    //See if that email exists
+userSchema.statics.login = async function(email,password) {
+    const user = await this.findOne({email:email});
     if (!user) {
         throw Error("Incorrect Username");
     }
-    //Match received password and existing password
     const match = await bcrypt.compare(password,user.password);
     if (!match) {
         throw Error("Incorrect Password!");
     }
     return user;
 }
-
-module.exports = mongoose.model('projmuser',userSchema);
