@@ -40,7 +40,7 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans flex items-center justify-center p-6 relative overflow-hidden selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6 relative overflow-hidden selection:bg-indigo-500 selection:text-white">
       
       {/* --- Background Ambience --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -57,7 +57,7 @@ export default function AuthPage() {
             <div className="w-10 h-10 bg-gradient-to-tr from-indigo-500 to-teal-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20 transform group-hover:rotate-12 transition-transform duration-300">
               <Layers size={22} className="text-white" />
             </div>
-            <span className="text-2xl font-bold tracking-tight">Project<span className="text-indigo-400">Tracker</span></span>
+            <span className="titles text-2xl font-bold tracking-tight">Super<span className="text-indigo-400">Vise</span></span>
           </div>
         </div>
 

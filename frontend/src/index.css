@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "MiracleMonoRegular";
+    src: url("./assets/fonts/Miracle\ Mono\ Regular.otf");
+};
+
+@font-face {
+    font-family: "Vonique64Bold";
+    src: url('./assets/fonts/Vonique\ 64\ Bold.ttf');
+}
+
+.app_main{
+    font-family: "MiracleMonoRegular";
+}
+
+.titles{
+    font-family: "Vonique64Bold";
+    
+}

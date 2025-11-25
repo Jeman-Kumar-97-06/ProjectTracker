@@ -8,7 +8,7 @@ import MemberDashboard from "./components/MembersHome"
 import TeamChat from "./components/TeamChat"
 function App() {
   return (
-   <>
+   <div className="app_main">
    <BrowserRouter>
     <Routes>
       <Route exact path='/' element={<LandingPage/>}/>
@@ -19,7 +19,7 @@ function App() {
       <Route exact path='/tasks' element={<TasksPage/>}/>
     </Routes>
    </BrowserRouter>
-   </>   
+   </div>   
   )
 }
 

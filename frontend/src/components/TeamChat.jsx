@@ -122,7 +122,7 @@ export default function TeamChat() {
   };
 
   return (
-    <div className="h-screen bg-slate-950 text-white font-sans flex overflow-hidden selection:bg-teal-500 selection:text-white">
+    <div className="h-screen bg-slate-950 text-white flex overflow-hidden selection:bg-teal-500 selection:text-white">
       
       {/* Background Ambience */}
       <div className="fixed inset-0 z-0 pointer-events-none">

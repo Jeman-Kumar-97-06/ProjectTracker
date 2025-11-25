@@ -21,7 +21,7 @@ export default function TasksPage() {
   const [filter, setFilter] = useState('All');
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans p-6 md:p-12">
+    <div className="min-h-screen bg-[#050505] text-white p-6 md:p-12">
       <style>{`
         .glass-panel {
           background: rgba(255, 255, 255, 0.03);

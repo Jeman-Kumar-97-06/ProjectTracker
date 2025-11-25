@@ -11,7 +11,7 @@ const chartStyles = `
 
 export default function ReportsPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans p-6 md:p-12">
+    <div className="min-h-screen bg-[#050505] text-white p-6 md:p-12">
       <style>{chartStyles}</style>
       
       {/* --- Header --- */}

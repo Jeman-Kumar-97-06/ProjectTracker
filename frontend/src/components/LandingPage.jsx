@@ -72,7 +72,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans overflow-x-hidden selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden selection:bg-indigo-500 selection:text-white">
       
       {/* Background Ambience */}
       <div className="fixed inset-0 z-0 pointer-events-none">
@@ -89,7 +89,7 @@ export default function Landing() {
             <div className="w-8 h-8 bg-gradient-to-tr from-indigo-500 to-teal-400 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform">
               <Layers size={18} className="text-white" />
             </div>
-            <span className="text-xl font-bold tracking-tight">Project<span className="text-indigo-400">Tracker</span></span>
+            <span className="titles text-xl font-bold tracking-tight">Super<span className="text-indigo-400">Vise</span></span>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
