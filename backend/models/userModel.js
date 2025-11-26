@@ -40,4 +40,6 @@ userSchema.statics.login = async function(email,password) {
         throw Error("Incorrect Password!");
     }
     return user;
-}
+};
+
+module.exports = mongoose.model("projuser",userSchema);
